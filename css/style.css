@@ -9,7 +9,7 @@
     --primary-e: #a4c9ff;
 
     --secondary-a: #030712;
-    --secondary-b: #001c39;
+    --secondary-b: #00162e;
     --secondary-c: #0f1d3d;
     --secondary-d: #00315d;
     --secondary-e: #2c455b;
@@ -55,13 +55,14 @@
 ! ==================================================
 */
 
-html{
+html {
     scrollbar-width: thin;
+    
     scroll-behavior: smooth;
 }
 
 /* ! navbar start */
-#navMenu{
+#navMenu {
     max-height: 0;
 
     overflow: hidden;
@@ -78,10 +79,35 @@ html{
 
 /* ? for all pages end */
 
+/* 
+! ==================================================
+! =============index page start===================== 
+! ==================================================
+*/
+
+/* ! heder index section start */
+.hero-cover {
+    background-image: url(https://i.pinimg.com/1200x/82/86/3c/82863c8e540124c3848145bf16484e61.jpg);
+    background-size: cover;
+    background-position: right;
+}
+
+.hero-theme {
+    background: linear-gradient(0deg, var(--secondary-a) 30%, transparent 100%);
+
+}
+
+/* ? heder index section end */
 
 
 
 
+
+
+
+
+
+/* ? index page end */
 
 
 

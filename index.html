@@ -37,7 +37,10 @@
   <nav class="bg-[var(--secondary-a)]  h-[60px] sm:h-[80px] w-full z-50 fixed">
 
     <!-- * main nab body -->
-    <section class="border-b-[0.5px] border-[var(--secondary-d)] mx-auto max-w-7xl px-3 h-full grid grid-cols-5 lg:grid-cols-13">
+    <section
+      class="border-b-[0.5px] border-[var(--secondary-d)] mx-auto max-w-7xl px-3 h-full grid grid-cols-5 lg:grid-cols-13"
+      data-aos="fade-down" data-aos-duration="1000"
+      >
 
       <!-- * web icon -->
       <div class="col-span-2 lg:col-span-3 flex justify-start select-none items-center">
@@ -86,7 +89,7 @@
     </section>
 
     <!-- * drop list for under large screen -->
-    <section id="navMenu" class="block lg:hidden  bg-[var(--secondary-a)] w-full ">
+    <section id="navMenu" class="block lg:hidden  bg-[var(--secondary-a)]/80 w-full ">
       <ul
         class="pt-5 pb-2 list-none w-[90%] mx-auto border-b border-[var(--secondary-d)]  flex flex-col items-start select-none">
         <li class="text-base mb-3 text-white/70 hover:text-white/100 font-bold tracking-widest"><a href="#">Home</a>
@@ -107,19 +110,73 @@
 
   <!-- ! header index section start -->
 
-  <header class="pt-20">
+  <header class=" pt-20">
 
     <!-- * hero section index -->
-    <section class="p-2">
-      <article class="pt-5">
-        
+    <section class="pt-2 pb-10">
+      <article class="lg:pt-10  md:px-5 px-0">
+
+        <!-- * some Ps -->
+        <div class="w-full h-7 px-5  mb-5 max-w-3xl mx-auto grid grid-cols-3 ">
+          <p class="text-white/30 text-sm" data-aos="fade-right" data-aos-duration="1500">Your Rating</p>
+          <p class="text-center text-white/50  text-sm" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="400">Your Movie</p>
+          <p class="text-right text-white/30  text-sm" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="800">Your Option</p>
+        </div>
+
+        <div class="bg-white md:rounded-3xl md:pt-5 pt-0  max-w-4xl mx-auto h-[600px] relative ">
+          <!-- * hero poster -->
+          <div class="hero-cover h-[500px] md:max-w-2xl w-full  mx-auto md:rounded-3xl">
+            <h1 data-aos="zoom-in" data-aos-duration="2000" class="font-boo sm:text-9xl text-white text-8xl tracking-widest pt-35 pl-5 select-none">BLEU<br />MOON
+            </h1>
+
+
+          </div>
+
+
+          <!-- * website caption -->
+          <div class="hero-theme absolute inset-0  z-40">
+            <div class=" p-5 relative  w-full h-full">
+              <div class="absolute top-[70%] inset-px px-5 ">
+
+                <!-- * main sentence -->
+                <h3 data-aos="zoom-out" data-aos-duration="2000"
+                  class="text-center font-playfair text-xl sm:text-2xl italic font-bold text-[var(--primary-c)] tracking-wider">
+                  " I'm Gonna Make Him An Offer He Can Not Refuse "
+                </h3>
+
+                <!-- * description -->
+                <p class="text-center mt-10 px-5 text-white/50 text-sm font-light tracking-wider font-inter">
+                  Discover, Rate and Share more movies and series, and Explore what everyone else is watching.
+                  Make your list and find your next watching plan with us. rate what you wtchand see what other movie
+                  lovers think.
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- * Get started button -->
+        <div class="w-fit mx-auto mt-5 ">
+          <a href="#"
+            class="bg-white mx-auto w-fit shadow-[0_0_20px_5px_rgba(255,255,255,0.4)] text-sm sm:text-lg font-bold  py-3 rounded-full px-8  font-inter tracking-wide flex items-center">
+            GET STARTED <iconify-icon icon="bi:arrow-right-square-fill" class="ml-2 text-2xl "></iconify-icon>
+          </a>
+
+          <p class="text-white/30 text-xs text-center tracking-wider font-playfair mt-3">[ Explore movies, series,
+            actors and more ]</p>
+        </div>
 
 
 
       </article>
+
+      <div class=" pt-15 text-center text-white/20 select-none">
+        <h5 class="text-sm tracking-wider">Scroll For Info</h5>
+        <iconify-icon icon="bi:arrow-down" class="text-3xl mt-5 font-thin"></iconify-icon>
+      </div>
     </section>
-
-
 
   </header>
 
@@ -127,6 +184,139 @@
 
 
 
+  <!-- ! footer index section start -->
+
+  <footer class="bg-transparent border-t border-white/10 text-white pt-5 mt-20">
+
+
+    <div class="max-w-5xl mx-auto px-10 py-16">
+
+      <!--*   title -->
+      <h2 data-aos="fade-right" data-aos-duration="2000"
+        class="text-5xl sm:text-6xl font-boo tracking-tight text-white mb-12">
+        BLEU MOON<span class="text-[var(--primary-b)] text-4xl sm:text-5xl">.</span>
+      </h2>
+
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 mb-4">SERVICES</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Help you build your own movies library and discover more about any movie, series or actor.
+          </p>
+
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">MOVIES</h3>
+          <ul class="flex flex-col gap-2.5">
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+
+                Browser Movies
+              </a>
+            </li>
+
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                Top Rated
+              </a>
+            </li>
+
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                Treanding
+              </a>
+            </li>
+
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                New Releases
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                Popular
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">Contact</h3>
+          <ul class="flex flex-col gap-2.5">
+            <li>
+              <a href="mailto:hishamlotfy556.com"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="clarity:email-outline-badged" class="text-gray-500 text-base"></iconify-icon>
+                Email US
+              </a>
+            </li>
+
+            <li>
+              <a href="https://wa.me/201080593817" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="ant-design:whats-app-outlined" class="text-gray-500 text-base"></iconify-icon>
+                WhatsApp
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/in/hisham-lotfy-25h/" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="akar-icons:linkedin-box-fill" class="text-gray-500 text-base"></iconify-icon>
+                LinkedIn
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/hisham2552006/" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="cib:instagram" class="text-gray-500 text-base"></iconify-icon>
+                Instagram
+              </a>
+            </li>
+
+            <li>
+              <a href="https://x.com/Hishamollax" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="bi:twitter-x" class="text-gray-500 text-base"></iconify-icon>
+                X
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 mb-4">QR Code</h3>
+          <img src="assets/imgs/qr-code.png" class="w-40 h-40 rounded-lg">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- * copyright -->
+    <div class="border-t border-white/10">
+      <div class="max-w-5xl mx-auto px-6 py-5">
+        <p class="text-xs text-gray-600">
+          &copy; 2026 Hisham. All rights reserved.
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ? footer index section end -->
 
 
   <!-- * Iconify -->
@@ -134,6 +324,9 @@
 
   <!-- * AOS js file -->
   <script src="js/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
   <!-- * main js file -->
   <script src="js/main.js"></script>
