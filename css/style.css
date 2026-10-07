@@ -1,0 +1,40 @@
+/** general css file */
+
+:root {
+    /* * colors  */
+    --primary-c: #004883;
+    --primary-b: #93c5fd;
+    --primary-a: #2a79cb;
+    --primary-d: #a4c9ff;
+
+    --secondary-a: #030712;
+    --secondary-b: #001c39;
+    --secondary-c: #0f1d3d;
+    --secondary-d: #00315d;
+
+    
+
+}
+
+/* ! general class start */
+
+.font-inter{
+    font-family: "Inter";
+}
+
+.font-playfair{
+    font-family: "Playfair Display";
+}
+
+.font-boo{
+    font-family: "Black Ops One";
+}
+
+.font-bitcont{
+    font-family: "Bitcount Ink";
+}
+
+/* ? general class end */
+
+
+
