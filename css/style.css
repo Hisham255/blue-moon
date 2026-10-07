@@ -2,35 +2,37 @@
 
 :root {
     /* * colors  */
-    --primary-c: #004883;
-    --primary-b: #93c5fd;
-    --primary-a: #2a79cb;
-    --primary-d: #a4c9ff;
+    --primary-a: #004883;
+    --primary-b: #2a79cb;
+    --primary-c: #6690bd;
+    --primary-d: #93c5fd;
+    --primary-e: #a4c9ff;
 
     --secondary-a: #030712;
     --secondary-b: #001c39;
     --secondary-c: #0f1d3d;
     --secondary-d: #00315d;
+    --secondary-e: #2c455b;
 
-    
+
 
 }
 
 /* ! general class start */
 
-.font-inter{
+.font-inter {
     font-family: "Inter";
 }
 
-.font-playfair{
+.font-playfair {
     font-family: "Playfair Display";
 }
 
-.font-boo{
+.font-boo {
     font-family: "Black Ops One";
 }
 
-.font-bitcont{
+.font-bitcont {
     font-family: "Bitcount Ink";
 }
 
@@ -38,3 +40,57 @@
 
 
 
+
+
+
+
+
+
+/* ! css edits start */
+
+
+/* 
+! ==================================================
+! ==========for all pages start===================== 
+! ==================================================
+*/
+
+html{
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+/* ! navbar start */
+#navMenu{
+    max-height: 0;
+
+    overflow: hidden;
+    transition: max-height 0.55s ease;
+}
+
+#navMenu.open {
+    max-height: 320px;
+}
+
+
+
+/* ? navbar end */
+
+/* ? for all pages end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ? css edits end */

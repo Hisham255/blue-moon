@@ -1,0 +1,38 @@
+
+notes :
+    - in the navbar ul remember to add .active for the bottom border.
+    - in the navbar ul remember to add the direcctions in href.
+    - in the navbar form remember to add the direction in the action.
+    
+    
+
+
+
+
+
+
+
+
+working in :
+    ==>index :
+        -header.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
