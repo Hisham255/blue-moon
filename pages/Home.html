@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+
+
+  <!-- * google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&family=Black+Ops+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+
+  <!-- * Tailwind -->
+  <script src="../js/browser@4.js"></script>
+
+  <!-- * AOS  -->
+  <link rel="stylesheet" href="../css/aos.css">
+
+  <!-- * css file -->
+  <link rel="stylesheet" href="../css/style.css">
+
+
+
+</head>
+
+
+
+
+<body class="bg-[var(--secondary-a)]">
+
+  <!-- ! navbar home section start -->
+
+  <nav class="bg-[var(--secondary-a)]  h-[60px] sm:h-[80px] w-full z-50 fixed">
+
+    <!-- * main nab body -->
+    <section
+      class="border-b-[0.5px] border-[var(--secondary-d)] mx-auto max-w-7xl px-3 h-full grid grid-cols-5 lg:grid-cols-13"
+      data-aos="fade-down" data-aos-duration="1000">
+
+      <!-- * web icon -->
+      <div class="col-span-2 lg:col-span-3 flex justify-start select-none items-center">
+        <a href="../index.html">
+          <h2 class="font-boo  xl:text-4xl sm:text-3xl text-xl text-white">BLUE MOON</h2>
+        </a>
+      </div>
+
+      <!-- * links list over large -->
+      <div class="hidden lg:block lg:col-span-6 select-none">
+        <ul class="h-full w-full  text-white/70 list-none flex justify-center items-center">
+          <li class="2xl:mx-5 mx-4 text-base hover:text-white/100 "><a href="Home.html">Home</a></li>
+          <li class="2xl:mx-5 mx-4 text-base hover:text-white/100 "><a href="#">Category</a></li>
+          <li class="2xl:mx-5 mx-4 text-base hover:text-white/100 "><a href="#">News</a></li>
+        </ul>
+      </div>
+
+      <!-- * search form and button for links menu  under large -->
+      <div class="col-span-3 lg:col-span-4 flex justify-end items-center ">
+
+        <!-- * search form -->
+        <form action="#" id="nabarForm"
+          class="bg-[var(--secondary-c)] h-[55%] w-[80%] rounded-full px-4 flex items-center">
+          <button type="submit" class="text-white/30 font-semibold m-0 pt-1 cursor-pointer">
+            <iconify-icon icon="akar-icons:search" class="sm:text-xl text-base"></iconify-icon>
+          </button>
+
+          <input id="searchValue" type="text" name="search_value" placeholder="Search movies, series, actors...."
+            class="text-white/70 ml-2 w-[90%] outline-none border-none sm:text-sm text-xs overflow-hidden shadow-none placeholder:select-none">
+
+        </form>
+
+        <!-- * links menu button-->
+        <span class="block lg:hidden mx-4 w-fit h-fit ">
+          <button id="menuBtn"
+            class="border border-white/70 rounded-sm p-1 flex justify-center items-center aspect-square cursor-pointer">
+            <iconify-icon id="menuBtnIcon" icon="eva:menu-outline"
+              class="sm:text-2xl text-base  text-white/60 "></iconify-icon>
+          </button>
+        </span>
+
+
+      </div>
+
+
+    </section>
+
+    <!-- * drop list for under large screen -->
+    <section id="navMenu" class="block lg:hidden  bg-[var(--secondary-a)]/80 w-full ">
+      <ul
+        class="pt-5 pb-2 list-none w-[90%] mx-auto border-b border-[var(--secondary-d)]  flex flex-col items-start select-none">
+        <li class="text-base mb-3 text-white/70 hover:text-white/100 font-bold tracking-widest"><a href="#">Home</a>
+        </li>
+        <li class="text-base mb-3 text-white/70 hover:text-white/100 font-bold tracking-widest"><a href="#">Category</a>
+        </li>
+        <li class="text-base mb-3 text-white/70 hover:text-white/100 font-bold tracking-widest"><a href="#">News</a>
+        </li>
+
+      </ul>
+    </section>
+
+  </nav>
+
+  <!-- ? navbar home section end -->
+
+
+  <!-- ! header home section start -->
+
+  <header class="header-home-section h-[700px] pt-20">
+    <section class="w-full h-full">
+      <h2 data-aos="fade-up" data-aos-duration="1000"
+        class="text-center px-10 pt-[200px] lg:pt-[250px] font-playfair text-xl sm:text-2xl md:text-3xl text-white font-black tracking-widest">
+        Explore The Most Popular Movies,<br>Track Your Movies And Save Others To Watch Plan.
+      </h2>
+    </section>
+  </header>
+
+  <!-- ? header home section end -->
+
+  <!-- ! main home section start  -->
+
+  <main class=" py-10 ">
+
+    <!-- * top 3 movies section -->
+    <section class="px-4 sm:px-10 mb-10">
+
+      <div  class="flex justify-between flex-wrap ">
+        <h3 data-aos="fade-right" data-aos-duration="800" class="text-3xl xl:text-4xl text-white tracking-wide font-extrabold font-playfair">TOP3</h3>
+        <p data-aos="fade-left" data-aos-duration="800" class="text-xs sm:text-sm text-white/50 pt-3">These are the three highest-ranked cinematic experiences<br>
+          commanding viewer attention this week.</p>
+      </div>
+
+      <div class="grid grid-cols-2 mt-10">
+
+        <article data-aos="fade-up" data-aos-duration="1000" data-movies-top="1" class=" col-span-2 xl:col-span-1 sm:p-4 p-2 w-full select-none">
+
+        </article>
+
+        <div class="xl:col-span-1 col-span-2 grid xl:grid-cols-1 grid-cols-2 ">
+
+          <article data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-movies-top="2" class=" col-span-1 p-2 md:p-4 w-full select-none">
+
+          </article>
+
+          <article data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-movies-top="3" class=" col-span-1 p-2 md:p-4 w-full select-none">
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- * small news section -->
+    <section class="px-4 sm:px-10 ">
+
+      <div data-aos="fade-up" data-aos-duration="1000"  class="flex justify-between flex-wrap ">
+        <h3 class="text-3xl xl:text-4xl text-white tracking-wide font-extrabold font-playfair">LATEST NEWS</h3>
+        <p class="text-xs sm:text-sm text-white/50 pt-3">
+          In-depth stories, cinematic analyses, festival premieres, and industry updates..</p>
+      </div>
+
+      <div class="grid grid-cols-2 mt-10">
+
+        <article data-aos="fade-up" data-aos-duration="1000" data-news="1" class="col-span-2 xl:col-span-1 sm:p-4 p-2 w-full ">
+
+        </article>
+
+        <div class="xl:col-span-1 col-span-2 grid xl:grid-cols-1 w-full grid-cols-2 ">
+
+          <article data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-news="2" class="col-span-1 p-2 md:p-4 w-full">
+
+          </article>
+
+          <article data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-news="3" class="col-span-1 p-2 md:p-4 w-full">
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="px-4 sm:px-10 mt-10">
+      <div class="flex justify-center items-center select-none mb-5">
+        <hr class="w-15 h-[1px] border-none bg-[var(--primary-c)] ">
+        <h6 class="text-[var(--primary-c)]/90 font-inter font-bold tracking-wider mx-3">CINEMA BEYOND HORIZONS</h6>
+        <hr class="w-15 h-[1px] border-none bg-[var(--primary-c)] ">
+      </div>
+
+      <div class="relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+        <div class="website-title-footer absolute inset-0 "></div>
+        <h3
+          class="font-boo text-5xl sm:text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl text-center select-none text-white/70">
+          BLUE MOON</h3>
+      </div>
+
+      <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+        <p class="text-[var(--primary-e)]/50 text-center tracking-wider w-[80%] mx-auto">
+          Share Your Options With Your Friends And Be The Absolute Cinema Master.
+        </p>
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+  <!-- ? main home section end -->
+
+
+  <!-- ! footer home section start -->
+
+  <footer class="bg-transparent border-t border-white/10 text-white pt-5 mt-20 ">
+
+
+    <div class="max-w-5xl mx-auto px-10 py-16">
+
+      <!--*   title -->
+      <h2 data-aos="fade-right" data-aos-duration="2000"
+        class="text-5xl sm:text-6xl font-boo tracking-tight text-white mb-12">
+        BLEU MOON<span class="text-[var(--primary-b)] text-4xl sm:text-5xl">.</span>
+      </h2>
+
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 mb-4">SERVICES</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Help you build your own movies library and discover more about any movie, series or actor.
+          </p>
+
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">MOVIES</h3>
+          <ul class="flex flex-col gap-2.5">
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+
+                Browser Movies
+              </a>
+            </li>
+
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                Top Rated
+              </a>
+            </li>
+
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                Treanding
+              </a>
+            </li>
+
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                New Releases
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2 ">
+                Popular
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">Contact</h3>
+          <ul class="flex flex-col gap-2.5">
+            <li>
+              <a href="mailto:hishamlotfy556.com"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="clarity:email-outline-badged" class="text-gray-500 text-base"></iconify-icon>
+                Email US
+              </a>
+            </li>
+
+            <li>
+              <a href="https://wa.me/201080593817" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="ant-design:whats-app-outlined" class="text-gray-500 text-base"></iconify-icon>
+                WhatsApp
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/in/hisham-lotfy-25h/" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="akar-icons:linkedin-box-fill" class="text-gray-500 text-base"></iconify-icon>
+                LinkedIn
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/hisham2552006/" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="cib:instagram" class="text-gray-500 text-base"></iconify-icon>
+                Instagram
+              </a>
+            </li>
+
+            <li>
+              <a href="https://x.com/Hishamollax" target="_blank"
+                class="text-sm text-gray-300 hover:text-[var(--primary-b)] transition-colors duration-200 flex items-center gap-2">
+                <iconify-icon icon="bi:twitter-x" class="text-gray-500 text-base"></iconify-icon>
+                X
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 mb-4">QR Code</h3>
+          <img src="../assets/imgs/qr-code.png" class="w-40 h-40 rounded-lg">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- * copyright -->
+    <div class="border-t border-white/10">
+      <div class="max-w-5xl mx-auto px-6 py-5">
+        <p class="text-xs text-gray-600">
+          &copy; 2026 Hisham. All rights reserved.
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ? footer home section end -->
+
+  <!-- * data js -->
+  <script src="../js/movies.js"></script>
+  <script src="../js/series.js"></script>
+  <script src="../js/news.js"></script>
+  <script src="../js/list.js"></script>
+  
+  <!-- * Iconify -->
+  <script src="../js/iconify-icon.min.js"></script>
+
+  <!-- * AOS js file -->
+  <script src="../js/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+<!-- * main js file -->
+  <script src="../js/main.js"></script>
+  <script src="../js/home.js"></script>
+
+
+
+</body>
+
+</html>
