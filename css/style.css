@@ -13,6 +13,7 @@
     --secondary-c: #0f1d3d;
     --secondary-d: #00315d;
     --secondary-e: #2c455b;
+    --secondary-f: #242525;
 
 
 
@@ -130,12 +131,82 @@ html {
 
 /* ? main home section end  */
 
-
 /* ? home page end */
 
 
+/* 
+! ==================================================
+! ============ category page start =================
+! ==================================================
+*/
+
+/* ! header category section start */
+.header-category-section {
+    background: linear-gradient(80deg, var(--secondary-a), var(--secondary-b), var(--secondary-a));
+
+}
+
+.switch-btn-category-section-right {
+    animation: toRight 0.5s ease-in-out 0.01s normal forwards;
+
+}
+
+@keyframes toRight {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.switch-btn-category-section-left {
+    animation: toLeft 0.5s ease-in-out normal forwards;
+    
+}
+
+@keyframes toLeft {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
 
 
+#seriesBtnCategory.active,
+#moviesBtnCategory.active {
+    color: black;
+}
+/* ? header category section end */
+
+/* ! main category section start */
+.category-display-section{
+    background: linear-gradient(80deg, var(--secondary-a), #000f1f, var(--secondary-a), #000f1f, var(--secondary-a));
+}
+
+#categoryCheckList li button.active{
+    background-color: rgba(81, 81, 81, 0.21);
+}
+
+#categoryCheckList li button.active span{
+    color: var(--primary-d);
+}
+
+#categoryCheckList li button.active h6{
+    color: var(--primary-c);
+}
+
+.iconify-me.active{
+    color: var(--primary-b);
+}
+
+/* ? main category section end */
+
+/* ? category page end */
 
 
 
