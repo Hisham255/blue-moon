@@ -57,7 +57,7 @@ async function getMoviesData_home() {
   seriesBtn.addEventListener('click', () => {
     categoryType = "Series";
     dataUse = data_series.Series;
-    displayMovies(Series_Category[0], dataUse);
+    displayMovies(new Map([]), dataUse);
     changeType();
     seriesBtn.classList.add('active');
     moviesBtn.classList.remove('active');
@@ -69,7 +69,7 @@ async function getMoviesData_home() {
   moviesBtn.addEventListener('click', () => {
     categoryType = "Movies";
     dataUse = data.Movies;
-    displayMovies(Movies_Category[0], dataUse);
+    displayMovies(new Map([]), dataUse);
     changeType();
     moviesBtn.classList.add('active');
     seriesBtn.classList.remove('active');
