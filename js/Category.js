@@ -6,7 +6,6 @@ async function getMoviesData_home() {
 
   // ! movies category and nums
   const Movies_Category_u = new Map([]);
-
   data.Movies.forEach(e1 => {
     e1.Category.forEach(e2 => {
 
@@ -18,13 +17,13 @@ async function getMoviesData_home() {
 
     })
   });
-
   const Movies_Category_old = [...Movies_Category_u].sort((a, b) => b[1] - a[1]);
   const Movies_Category = Movies_Category_old.slice(0, 20);
 
   const api_data_series = await fetch("https://raw.githubusercontent.com/Hisham255/MyAPI/refs/heads/main/SeriseData.json");
   const data_series = await api_data_series.json();
   await AOS.refresh();
+
   // ! movies category and nums
   const Series_Category_u = new Map([]);
   data_series.Series.forEach(e1 => {
@@ -50,32 +49,37 @@ async function getMoviesData_home() {
   var numOfSelectCat = document.querySelector('#numOfSelectCat');
   var categoryCheckList = document.querySelector('#categoryCheckList');
   let categoryType = "Movies";
-  changeType();
 
-  displayMovies(new Map([]), dataUse);
-
-  seriesBtn.addEventListener('click', () => {
-    categoryType = "Series";
-    dataUse = data_series.Series;
-    displayMovies(new Map([]), dataUse);
+  
     changeType();
-    seriesBtn.classList.add('active');
-    moviesBtn.classList.remove('active');
-    switchAnimation.classList.add('switch-btn-category-section-right');
-    switchAnimation.classList.remove('switch-btn-category-section-left');
-
-  });
-
-  moviesBtn.addEventListener('click', () => {
-    categoryType = "Movies";
-    dataUse = data.Movies;
     displayMovies(new Map([]), dataUse);
-    changeType();
-    moviesBtn.classList.add('active');
-    seriesBtn.classList.remove('active');
-    switchAnimation.classList.add('switch-btn-category-section-left');
-    switchAnimation.classList.remove('switch-btn-category-section-right');
-  });
+  
+  
+    seriesBtn.addEventListener('click', () => {
+      categoryType = "Series";
+      dataUse = data_series.Series;
+      displayMovies(new Map([]), dataUse);
+      changeType();
+
+      seriesBtn.classList.add('active');
+      moviesBtn.classList.remove('active');
+      switchAnimation.classList.add('switch-btn-category-section-right');
+      switchAnimation.classList.remove('switch-btn-category-section-left');
+  
+    });
+  
+    moviesBtn.addEventListener('click', () => {
+      categoryType = "Movies";
+      dataUse = data.Movies;
+      displayMovies(new Map([]), dataUse);
+      changeType();
+
+      moviesBtn.classList.add('active');
+      seriesBtn.classList.remove('active');
+      switchAnimation.classList.add('switch-btn-category-section-left');
+      switchAnimation.classList.remove('switch-btn-category-section-right');
+    });
+
 
   function changeType() {
 
@@ -181,11 +185,11 @@ async function getMoviesData_home() {
 
       article.innerHTML = `
         <div class=" w-full h-full bg-[var(--secondary-b)] pb-3 rounded-xl ">
-          <a href="Movie.html?Id=${m.Id}">
+          <a href="Movie.html?Id=${m.Id}&Type=${m.Type}">
             
             <div class="lg:h-[300px] h-48 relative rounded-xl">
               <img src="${m.Images}" class="absolute inset-0 w-full h-full rounded-t-xl z-10">
-              <div class="bg-black/50 absolute inset-0 z-20 hover:bg-black/30 transition-colors rounded-xl"></div>
+              <div class="bg-black/30 absolute inset-0 z-20 hover:bg-black/10 transition-colors rounded-xl"></div>
               <h6 class="flex justify-center items-center lg:text-base text-xs rounded-xl px-2 bg-slate-700/80 absolute top-3 left-3 z-30"><iconify-icon icon="ant-design:star-filled" class="mr-1 text-yellow-500"></iconify-icon>${m.Rate}</h6>
             </div>
             
@@ -210,31 +214,6 @@ async function getMoviesData_home() {
 
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  console.log("done get news data and run the C");
   console.log("done get movie data and run the C");
   AOS.refresh();
 }

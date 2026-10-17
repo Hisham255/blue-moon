@@ -6,7 +6,7 @@ async function getMoviesData_home() {
   const data = await api_data_movies.json();
   const api_data_news = await fetch("https://raw.githubusercontent.com/Hisham255/MyAPI/refs/heads/main/NewsData.json");
   const data_news = await api_data_news.json();
-
+  await AOS.refresh(); 
 
 
 
@@ -64,7 +64,7 @@ async function getMoviesData_home() {
               </div>
 
               <div class=" border-t border-t-white/40 ">
-                <a href="Movie.html?Id=${tops[0].Id}"
+                <a href="Movie.html?Id=${tops[0].Id}&Type=${tops[0].Type}"
                   class="w-full text-center block h-full py-4 text-white/50 md:text-base tracking-wider text-xs ">Explore
                   Movie</a>
 
@@ -94,7 +94,7 @@ async function getMoviesData_home() {
               </div>
 
               <div class=" border-t border-t-white/40 ">
-                <a href="Movie.html?Id=${tops[1].Id}"
+                <a href="Movie.html?Id=${tops[1].Id}&Type=${tops[1].Type}"
                   class="w-full text-center block h-full py-2 text-white/50 tracking-wider text-xs ">Explore
                   Movie</a>
               </div>
@@ -123,7 +123,7 @@ async function getMoviesData_home() {
               </div>
 
               <div class=" border-t border-t-white/40 ">
-                <a href="Movie.html?Id=${tops[2].Id}"
+                <a href="Movie.html?Id=${tops[2].Id}&Type=${tops[2].Type}"
                   class="w-full text-center block h-full py-2 text-white/50 tracking-wider text-xs ">Explore
                   Movie</a>
               </div>
@@ -192,7 +192,7 @@ async function getMoviesData_home() {
             </div>
 
             <div class=" border-t border-t-white/40 ">
-              <a href="Movie.html?Id=${lastNews[0].MovieId}"
+              <a href="Movie.html?Id=${lastNews[0].MovieId}&Type=Movie"
                 class="w-full text-center block h-full py-2 md:py-4 text-white/50 tracking-wider text-sm ">Explore
                 Movie</a>
             </div>
@@ -231,7 +231,7 @@ async function getMoviesData_home() {
               </div>
 
               <div class=" border-t border-t-white/40 ">
-                <a href="Movie.html?Id=${lastNews[1].MovieId}"
+                <a href="Movie.html?Id=${lastNews[1].MovieId}&Type=Movie"
                   class="w-full text-center block h-full py-1 md:py-2 text-white/50 tracking-wider text-xs ">Explore
                   Movie</a>
               </div>
@@ -270,7 +270,7 @@ async function getMoviesData_home() {
               </div>
 
               <div class=" border-t border-t-white/40 ">
-                <a href="Movie.html?Id=${lastNews[2].MovieId}"
+                <a href="Movie.html?Id=${lastNews[2].MovieId}&Type=Movie"
                   class="w-full text-center block h-full py-1 md:py-2 text-white/50 tracking-wider text-xs ">Explore
                   Movie</a>
               </div>
@@ -279,10 +279,6 @@ async function getMoviesData_home() {
     
     
     `
-
-
-
-
 
 
   console.log("done get news data and run the C");
