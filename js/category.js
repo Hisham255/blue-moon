@@ -51,41 +51,51 @@ async function getMoviesData_home() {
   var categoryPhoneList = document.querySelector('#categoryPhoneList');
   var categoryPhoneBtn = document.querySelector('#categoryPhoneBtn');
 
-  categoryPhoneBtn.addEventListener('click', ()=>{
+  categoryPhoneBtn.addEventListener('click', () => {
     categoryPhoneList.classList.toggle('open');
   });
 
   let categoryType = "Movies";
-
+  var widthScreen = window.innerWidth;
+  var moviesNum = 0;
+  if(window.innerWidth > 1200){
+    moviesNum = 8;
+  }else if(window.innerWidth < 600) {
+    moviesNum = 4;
+  }else {
+    moviesNum = 6;
+  }
   
+
+
+  changeType();
+  displayMovies(new Map([]), dataUse, moviesNum);
+
+
+  seriesBtn.addEventListener('click', () => {
+    categoryType = "Series";
+    dataUse = data_series.Series;
+    displayMovies(new Map([]), dataUse, moviesNum);
     changeType();
-    displayMovies(new Map([]), dataUse);
-  
-  
-    seriesBtn.addEventListener('click', () => {
-      categoryType = "Series";
-      dataUse = data_series.Series;
-      displayMovies(new Map([]), dataUse);
-      changeType();
 
-      seriesBtn.classList.add('active');
-      moviesBtn.classList.remove('active');
-      switchAnimation.classList.add('switch-btn-category-section-right');
-      switchAnimation.classList.remove('switch-btn-category-section-left');
-  
-    });
-  
-    moviesBtn.addEventListener('click', () => {
-      categoryType = "Movies";
-      dataUse = data.Movies;
-      displayMovies(new Map([]), dataUse);
-      changeType();
+    seriesBtn.classList.add('active');
+    moviesBtn.classList.remove('active');
+    switchAnimation.classList.add('switch-btn-category-section-right');
+    switchAnimation.classList.remove('switch-btn-category-section-left');
 
-      moviesBtn.classList.add('active');
-      seriesBtn.classList.remove('active');
-      switchAnimation.classList.add('switch-btn-category-section-left');
-      switchAnimation.classList.remove('switch-btn-category-section-right');
-    });
+  });
+
+  moviesBtn.addEventListener('click', () => {
+    categoryType = "Movies";
+    dataUse = data.Movies;
+    displayMovies(new Map([]), dataUse, moviesNum);
+    changeType();
+
+    moviesBtn.classList.add('active');
+    seriesBtn.classList.remove('active');
+    switchAnimation.classList.add('switch-btn-category-section-left');
+    switchAnimation.classList.remove('switch-btn-category-section-right');
+  });
 
 
   function changeType() {
@@ -137,13 +147,13 @@ async function getMoviesData_home() {
         }
         numOfSelectCat.innerHTML = dataFilter.size;
 
-        displayMovies(dataFilter, dataUse);
+        displayMovies(dataFilter, dataUse, moviesNum);
 
       });
 
-      
+
       categoryCheckList.append(newEle);
-      
+
     });
 
     source.forEach((c, num) => {
@@ -188,20 +198,20 @@ async function getMoviesData_home() {
         }
         numOfSelectCat.innerHTML = dataFilter.size;
 
-        displayMovies(dataFilter, dataUse);
+        displayMovies(dataFilter, dataUse, moviesNum);
 
       });
 
-      
+
       categoryPhoneList.append(newEle);
-      
+
     });
 
 
 
   }
 
-  function displayMovies(dataFilter, data) {
+  function displayMovies(dataFilter, data, moviesNum) {
 
 
     var moviesDisplaySec = document.querySelector('#moviesDisplaySec');
@@ -228,7 +238,11 @@ async function getMoviesData_home() {
       });
     }
     document.querySelector('#numOfMoviesFound').innerHTML = dataUse.length;
-    dataUse.forEach(m => {
+
+
+
+    for (var i = 0; i < dataUse.length && i < moviesNum; i++) {
+      var m = dataUse[i];
       var article = document.createElement('article');
       article.className = [
         "p-2",
@@ -243,35 +257,65 @@ async function getMoviesData_home() {
       ].join(" ");
 
       article.innerHTML = `
-        <div class=" w-full h-full bg-[var(--secondary-b)] pb-3 rounded-xl ">
-          <a href="Movie.html?Id=${m.Id}&Type=${m.Type}">
-            
-            <div class="lg:h-[300px] h-48 relative rounded-xl">
-              <img src="${m.Images}" class="absolute inset-0 w-full h-full rounded-t-xl z-10">
-              <div class="bg-black/30 absolute inset-0 z-20 hover:bg-black/10 transition-colors rounded-xl"></div>
-              <h6 class="flex justify-center items-center lg:text-base text-xs rounded-xl px-2 bg-slate-700/80 absolute top-3 left-3 z-30"><iconify-icon icon="ant-design:star-filled" class="mr-1 text-yellow-500"></iconify-icon>${m.Rate}</h6>
-            </div>
-            
-            <div class="px-2 pt-2">
-              <h4 class="text-white/90 lg:text-sm text-xs line-clamp-1">${m.Title}</h4>
-              <p class="text-[var(--primary-c)] font-inter text-xs lg:text-sm pt- line-clamp-1">[${m.Year}] <span class="font-extrabold">.</span> [${m.Stars[0]}]</p>
-            </div>
-          </a>
+      <div class=" w-full h-full bg-[var(--secondary-b)] pb-3 rounded-xl ">
+        <a href="Movie.html?Id=${m.Id}&Type=${m.Type}">
+          
+          <div class="lg:h-[300px] h-48 relative rounded-xl">
+            <img src="${m.Images}" class="absolute inset-0 w-full h-full rounded-t-xl z-10">
+            <div class="bg-black/30 absolute inset-0 z-20 hover:bg-black/10 transition-colors rounded-xl"></div>
+            <h6 class="flex justify-center items-center lg:text-base text-xs rounded-xl px-2 bg-slate-700/80 absolute top-3 left-3 z-30"><iconify-icon icon="ant-design:star-filled" class="mr-1 text-yellow-500"></iconify-icon>${m.Rate}</h6>
           </div>
-      `;
+          
+          <div class="px-2 pt-2">
+            <h4 class="text-white/90 lg:text-sm text-xs line-clamp-1">${m.Title}</h4>
+            <p class="text-[var(--primary-c)] font-inter text-xs lg:text-sm pt- line-clamp-1">[${m.Year}] <span class="font-extrabold">.</span> [${m.Stars[0]}]</p>
+          </div>
+        </a>
+        </div>
+    `;
 
       article.setAttribute('data-aos', 'fade-up');
       article.setAttribute('data-aos-duration', '800');
 
 
       moviesDisplaySec.append(article);
+      
+    }
+    
+    var loadMoreSec = document.createElement('div');
+    loadMoreSec.className = [
+      "w-full",
+      "border",
+      "border-t-white/40",
+      "col-span-full"
+    ].join(" ");
+
+    var loadMoreBtn = document.createElement('button');
+    loadMoreBtn.innerHTML = "LOAD MORE";
+    loadMoreBtn.className = [
+      "w-full",
+      "pt-2",
+      "pb-3",
+      "text-white/70",
+      "hover:bg-white/5",
+      "text-center",
+      
+      "cursor-pointer"
+    ].join(" ");
+
+    loadMoreBtn.addEventListener('click',()=>{
+      if(window.innerWidth > 1200){
+        moviesNum = moviesNum + 8;
+      }else if(window.innerWidth < 600) {
+        moviesNum = moviesNum + 4;
+      }else {
+        moviesNum = moviesNum + 6;
+      }
+      displayMovies(new Map([]), dataUse, moviesNum);
     });
-
-
-
-
-
-
+    
+    loadMoreSec.append(loadMoreBtn);
+    moviesDisplaySec.append(loadMoreSec);
   }
   console.log("done get movie data and run the C");
   AOS.refresh();
