@@ -48,6 +48,13 @@ async function getMoviesData_home() {
   // ! main 
   var numOfSelectCat = document.querySelector('#numOfSelectCat');
   var categoryCheckList = document.querySelector('#categoryCheckList');
+  var categoryPhoneList = document.querySelector('#categoryPhoneList');
+  var categoryPhoneBtn = document.querySelector('#categoryPhoneBtn');
+
+  categoryPhoneBtn.addEventListener('click', ()=>{
+    categoryPhoneList.classList.toggle('open');
+  });
+
   let categoryType = "Movies";
 
   
@@ -82,12 +89,11 @@ async function getMoviesData_home() {
 
 
   function changeType() {
-
     const source = categoryType === "Movies" ? Movies_Category : Series_Category;
     categoryCheckList.innerHTML = "";
+    categoryPhoneList.innerHTML = "";
     var dataFilter = new Set();
     dataFilter.clear();
-
 
     source.forEach((c, num) => {
       var newEle = document.createElement('li');
@@ -135,10 +141,62 @@ async function getMoviesData_home() {
 
       });
 
+      
       categoryCheckList.append(newEle);
-
-
+      
     });
+
+    source.forEach((c, num) => {
+      var newEle = document.createElement('li');
+      newEle.className = [
+        "p-1 ",
+        "mt-1",
+        "rounded-sm"
+      ].join(" ");
+
+      newEle.setAttribute('data-aos', 'fade-up');
+      newEle.setAttribute('data-aos-duration', '800');
+      newEle.setAttribute('data-aos-anchor-placement', 'top-bottom');
+      newEle.setAttribute('data-aos-delay', num * 50 % 800);
+
+      newEle.innerHTML = `
+        <button data-category="${c[0]}" class="w-full flex justify-between items-center cursor-pointer category-btn-check">
+          <div class="flex items-center">
+            <iconify-icon icon="akar-icons:square-fill" class="text-gray-600/80 mr-2 md:text-lg iconify-me"></iconify-icon>
+            <h6 class="text-white/80 md:text-sm  xl:text-lg text-xs font-inter">${c[0]}</h6>
+          </div>
+  
+          <span class="text-xs xl:text-sm text-white/40">${c[1]}</span>
+        </button>
+          `
+
+
+      var btn = newEle.querySelector('button');
+      var btnIcon = newEle.querySelector('.iconify-me');
+
+      btn.addEventListener('click', () => {
+        const activeIcon = btn.classList.toggle("active");
+        btnIcon.classList.toggle("active", activeIcon);
+        btnIcon.setAttribute('icon', activeIcon
+          ? 'akar-icons:check-box-fill'
+          : 'akar-icons:square-fill');
+
+        if (btn.classList.contains('active')) {
+          dataFilter.add(btn.dataset.category);
+        } else {
+          dataFilter.delete(btn.dataset.category);
+        }
+        numOfSelectCat.innerHTML = dataFilter.size;
+
+        displayMovies(dataFilter, dataUse);
+
+      });
+
+      
+      categoryPhoneList.append(newEle);
+      
+    });
+
 
 
   }
@@ -178,6 +236,7 @@ async function getMoviesData_home() {
         "md:w-[33%]",
         "sm:w-[50%]",
         "w-full",
+        "col-span-1",
         "hover:scale-95",
         "hover:duration-400"
 

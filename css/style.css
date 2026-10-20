@@ -204,6 +204,15 @@ html {
     color: var(--primary-b);
 }
 
+#categoryPhoneList{
+    display: none ;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff38 transparent; 
+}
+#categoryPhoneList.open{
+    display: block ;
+}
+
 /* ? main category section end */
 
 /* ? category page end */
